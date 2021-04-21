@@ -1,0 +1,222 @@
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*,
+*::after,
+*::before { 
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    height: 100vh;
+    background-color: #dcdce6;
+    background-image: url(/images/bg-top.svg), url(/images/bg-bottom.svg);
+    background-repeat: no-repeat;
+    background-position: top right, bottom left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    text-align: center;
+    padding-bottom: 4rem;
+
+    h1 {
+        padding-bottom: 3rem;   
+    }
+
+    &__switch {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__toggle {
+        background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 35px;
+        border-radius: 50px;
+        outline: none;   
+        margin: 0 2rem;
+        opacity: 1;
+        animation: opacity-toggle-out .5s linear forwards;
+    }
+
+    .fade-in {
+        animation: opacity-toggle-in .5s linear forwards;
+    }
+
+    @keyframes opacity-toggle-in {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes opacity-toggle-out {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    &__circle{
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        position: absolute;
+        left: 3px;
+        bottom: 5px;
+        background-color: white;
+        outline: none;
+        cursor: pointer;
+        animation: go-left .3s linear forwards;
+    }
+
+    .move {
+        animation: go-right .3s linear forwards;
+    }
+
+    @keyframes go-right {
+            0% {
+                left: 3px;
+            }
+            100% {
+                left: 30px; 
+                
+            }
+        }
+
+        @keyframes go-left {
+            0% {
+                left: 30px;
+            }
+            100% {
+                left: 3px;    
+            }
+        }
+}
+
+.offer {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+
+    
+    ul {
+        li {
+            font-weight: 500;
+        }
+
+        li:not(:last-child) {
+            padding-bottom: 1.5rem;
+            padding-top: 1.5rem;
+            border-bottom: 1px solid #dddddd;
+        }
+        
+        li:last-child {
+            padding-top: 1.5rem;
+        }
+
+        li:first-child {
+            font-weight: 700;
+            font-size: 4rem;
+        }  
+
+        i {
+            font-size: 2.3rem;
+            vertical-align: middle;
+            padding-right: 0.5rem;
+        }
+
+    }
+    
+    &__professional {
+        position: relative;
+        width: 380px;
+        padding: 2rem 4rem;
+        background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));;
+        
+        h2, li {
+            color: white;
+        }
+    }
+
+    &__professional::before {
+        position: absolute;
+        top: -22px;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 30px;
+        background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));;
+        border-radius: 10px;
+    }
+    &__professional::after {
+        position: absolute;
+        bottom: -22px;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 30px;
+        background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));;
+        border-radius: 10px;
+    }
+
+
+
+    &__basic, &__master {
+        width: 365px;
+        padding: 2rem 4rem;
+        border-radius: 10px;
+        background-color: white;
+    }  
+
+}
+
+    .cta_btn {
+        color: white;
+        padding: 0.6rem 4.4rem;
+        border-radius: 5px;
+        background: linear-gradient(to left, hsl(236, 72%, 79%), hsl(237, 63%, 64%));;
+    
+    }
+    .cta_btn-proff {
+        color: hsl(237, 63%, 64%);
+        padding: 0.6rem 4.4rem;
+        border-radius: 5px;
+        background-color: white;
+        transition: all .3s ease-in-out;
+    }
+
+    .cta_btn-proff:hover {
+        background: transparent;
+        border: 1px solid white;
+        color: white;
+    }
