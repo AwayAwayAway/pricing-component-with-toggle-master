@@ -286,4 +286,31 @@ body {
   border: 1px solid white;
   color: white;
 }
+
+@media (max-width: 1024px) {
+  .header {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .offer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 41rem;
+  }
+  .offer__professional {
+    width: 365px;
+    border-radius: 10px;
+  }
+  .offer__professional::before {
+    visibility: hidden;
+  }
+  .offer__professional::after {
+    visibility: hidden;
+  }
+}
 /*# sourceMappingURL=style.css.map */

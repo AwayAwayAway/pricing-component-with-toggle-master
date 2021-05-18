@@ -178,6 +178,7 @@ body {
         background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));;
         border-radius: 10px;
     }
+
     &__professional::after {
         position: absolute;
         bottom: -22px;
@@ -188,8 +189,6 @@ body {
         background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));;
         border-radius: 10px;
     }
-
-
 
     &__basic, &__master {
         width: 365px;
@@ -219,4 +218,34 @@ body {
         background: transparent;
         border: 1px solid white;
         color: white;
+    }
+
+    @media (max-width: 1024px) {
+
+        .header {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .offer {
+            flex-direction: column;
+            margin-top: 41rem;
+
+            &__professional{
+                width: 365px;
+                border-radius: 10px;   
+            }
+            
+
+            &__professional::before {
+                visibility: hidden;
+            }
+
+            &__professional::after {
+                visibility: hidden;
+            }
+
+        } 
     }
